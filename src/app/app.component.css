@@ -65,3 +65,113 @@
   line-height: 1.5; /* Increase line height for readability */
   color: #333; /* Dark color for text */
 }
+
+/* Container to hold both the left and right panels */
+.container {
+  display: flex; /* Flexbox is the key to align them horizontally */
+  gap: 90px; /* Adds space between the panels */
+}
+
+/* Left panel content */
+.left-panel {
+  flex: 2; /* Left panel takes up more space */
+  background-color: #f9f9f9; /* Just for visual purposes */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 50%;
+  margin: auto; /* Center the panel */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Add space between form elements */
+}
+
+.discount-section {
+  margin-top: 20px;
+}
+
+.discount-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.discount-table th, .discount-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.discount-table th {
+  background-color: #f2f2f2;
+}
+
+.btn {
+  background-color: #009999;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #009999
+}
+
+
+
+/* Optional: Styling to make both panels align at the top */
+.left-panel, .right-panel {
+  width: auto; /* or simply remove width declarations */
+}
+.container {
+  width: 100%; /* Make sure the container is wide enough */
+}
+
+
+/* Optional: Add responsive design to handle smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack the panels vertically on small screens */
+  }
+}
+
+
+.company-section {
+  border: 1px solid #ccc; /* Border around the box */
+  padding: 20px; /* Spacing inside the box */
+  margin: 20px 0; /* Space outside the box */
+  background-color: #f9f9f9; /* Light background color for visibility */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for 3D effect */
+  width: 40%;
+}
+
+.company-section table {
+  width: 30%; /* Make the table take the full width of the box */
+  border-collapse: collapse; /* Remove gaps between table cells */
+  margin-top: 20px; /* Space between table and preceding content */
+}
+
+.company-section table th,
+.company-section table td {
+  border: 1px solid #ddd; /* Table cell borders */
+  padding: 8px; /* Space inside table cells */
+  text-align: left; /* Align text to the left */
+}
+
+.company-section table th {
+  background-color: #f1f1f1; /* Light background for table header */
+  font-weight: bold; /* Make header text bold */
+}
+
+.company-section h3 {
+  margin-top: 0; /* Ensure there’s no extra space above the heading */
+}

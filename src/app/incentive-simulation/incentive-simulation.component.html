@@ -1,24 +1,79 @@
 <div class="sections-container">
     <!-- First Section -->
     <div class="section">
-      <h3>Offer Volume List Price: {{ offerVolumeListPrice | currency }}</h3>
+      <h4>Offer Volume List Price :  {{offervolume}}</h4> 
       <div class="discount">
-        <span class="top-discount">Top Discount: {{ topDiscount }}%</span>
-        <span class="target-discount">Target Discount: {{ targetDiscount }}%</span>
-        <span class="floor-discount">Floor Discount: {{ floorDiscount }}%</span>
+        <span class="top-discount">Top quote price : {{topQuotePrices}}</span>
+        <span class="target-discount">Target quote price : {{targetQuotePrice}}</span>
+        <span class="floor-discount">Floor quote price: {{floorQuotePrices}}</span>
+        <div class="price-section">
+        
+          <p>Your Simulation:</p>
+          <input 
+          type="range" 
+          [(ngModel)]="discount" 
+          min="184" 
+          max="210" 
+          step="1" 
+          (input)="onSliderChange($event)"
+          
+          class="discount-slider"
+          >
+          <p>{{ calculateDiscountSimulation() }}</p>
+        </div>
+        
+         
+        </div>
       </div>
-    </div>
+     
+
 
     <!-- Second Section -->
     <div class="section">
       <h3>Incentive for this deal</h3>
-      <p>{{ incentiveForDeal }}</p>
+      
+      <ngx-charts-bar-vertical
+  [view]="[250, 250]"
+  [scheme]="'vivid'"
+  [results]="targetQuotePriceChartData"
+  [gradient]="false"
+  [xAxis]="false"
+  [yAxis]="true"
+  [legend]="false"
+  [showYAxisLabel]="true"
+  [yAxisLabel]="'Incentive'"
+  [yScaleMin]="0"
+  [yScaleMax]="100"
+  [yAxisTickFormatting]="formatYAxisTick"
+  [yAxisTicks]="yTicksTargetQuotePrice" 
+></ngx-charts-bar-vertical>
+      
+      
+      
     </div>
 
     <!-- Third Section -->
     <div class="section">
       <h3>Realistic Discount Scenario</h3>
-      <p>{{ realisticDiscountScenario }}</p>
+      
+      <ngx-charts-bar-vertical
+      [view]="[250, 250]"
+      [scheme]="'vivid'"
+      [results]="incentiveChartData"
+      [gradient]="false"
+      [xAxis]="false"
+      [yAxis]="true"
+      [legend]="false"
+      [showYAxisLabel]="true"
+      [yAxisLabel]="'Probability in %'"
+      [yScaleMin]="0"
+      [yScaleMax]="100"
+      [yAxisTickFormatting]="formatYAxisTick" 
+      [yAxisTicks]="yTicks"
+    ></ngx-charts-bar-vertical>
+    
+        
+      
     </div>
   </div>
 
